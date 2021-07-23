@@ -1,0 +1,13 @@
+.title{
+    text-align: center;
+    padding-top:50px;
+
+
+}
+.container{
+    background:url("https://blog.bookingjini.com/content/images/wordpress/2016/06/front-office-management.jpg");
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+}

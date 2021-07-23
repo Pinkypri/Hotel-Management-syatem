@@ -1,0 +1,38 @@
+nav{
+    width: 100%;
+    float: right;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: aqua;
+    margin:auto auto;
+}
+
+ul{
+    float: right;
+    justify-content:space-evenly;
+    align-items: center;
+    padding:0 20px;
+}
+a{
+    font-size: large;
+    font-weight:bolder;
+    text-decoration: none;
+    color: black;
+    padding:10px 20px;
+}
+a:hover{
+    background-color: rgb(0, 110, 255);
+    color: white;
+    border: 2px solid black;
+}
+
+.heading{
+   margin-top: 40px;
+   margin-left: 40px;
+   padding-left: 20px;
+   color:crimson;
+   font-weight:600;
+   font-size:large;
+
+}

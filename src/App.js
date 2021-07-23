@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
+import Home from "./Pages/Home";
+import Customer from "./Pages/Customer";
+import About from './Pages/About';
+import Edit from "./Pages/Edit";
+import reducer from './Store/reducers/user';
+import { createStore } from "redux";
+import { Provider } from 'react-redux';
 
-function App() {
+const store=createStore(reducer);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Provider store={store}>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home}/>
+        <Route path="/customers" exact component={Customer}/>
+        <Route path="/edit" exact component={Edit}/>
+        <Route path="/about" exact component={About}/>
+      </Switch>
+    </Router>
+    </Provider>
+  )
 }
 
-export default App;
+export default App
+
+
