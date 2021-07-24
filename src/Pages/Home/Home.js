@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Navbar from '../Components/Navbar'
+import Navbar from '../../Components/Navbar/Navbar'
 import { useDispatch } from 'react-redux';
-import { addUser } from '../Store/actions/user';
+import { addUser } from '../../Store/actions/user';
 import { DateRangePicker } from "react-date-range"
 import 'react-date-range/dist/styles.css';
 import 'react-date-range/dist/theme/default.css';

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector} from 'react-redux';
-import Navbar from "../Components/Navbar"
-import { deleteUser,editUser } from '../Store/actions/user';
+import Navbar from "../../Components/Navbar/Navbar"
+import { deleteUser,editUser } from '../../Store/actions/user';
 import style from "./Customer.module.css";
 import {TableCell,TableHead,Paper,TableContainer,Table,TableBody,TableRow} from "@material-ui/core";
 import {Edit,Delete}from "@material-ui/icons"
@@ -21,9 +21,9 @@ const Customer = () => {
 
 <TableContainer component={Paper}>
         <Table  aria-label="customized table">
-          <TableHead className={style.tableHeading}>
+          <TableHead >
             <TableRow>
-              <TableCell>Name</TableCell>
+              <TableCell >Name</TableCell>
               <TableCell align="center">Email</TableCell>
               <TableCell align="center">Mobile</TableCell>
               <TableCell align="center">Aadhar no.</TableCell>
@@ -50,7 +50,8 @@ const Customer = () => {
                 <TableCell align="right">{user.startTime}</TableCell>
                 <TableCell align="right">{user.endTime}</TableCell>
                 <TableCell align="right">{user.days}</TableCell>
-               <TableCell><Edit onClick={()=>dispatch(editUser(index))}></Edit></TableCell> 
+               <TableCell><Edit onClick={()=>dispatch(editUser(index))}>
+               </Edit></TableCell> 
               <TableCell><Delete onClick={()=>dispatch(deleteUser(index))}></Delete></TableCell>  
               </TableRow>
              

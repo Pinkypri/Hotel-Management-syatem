@@ -1,11 +1,12 @@
 import React,{useState, useEffect} from 'react'
-import Navbar from "../Components/Navbar"
+import Navbar from "../../Components/Navbar/Navbar"
 import {useDispatch,useSelector} from 'react-redux'
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import {addUser} from "../Store/actions/user"
+import {addUser} from "../../Store/actions/user"
 import { TextField,Button } from "@material-ui/core";
+import styles from "./Edit.module.css";
 
 
 
@@ -21,7 +22,7 @@ const Edit = () => {
       ]);
       const users = useSelector((state)=>state.edit)
 
-
+console.log(users);
     const [user, setuser] = useState({
         name: "",
         email: "",
@@ -36,6 +37,7 @@ const Edit = () => {
 const dispatch = useDispatch()
 
 const handleAdd =(event)=>{
+ alert("successfully Uploaded Your Details")
  event.preventDefault();
  const { startDate, endDate } = date[0];
     const days = new Date(endDate).getDate() - new Date(startDate).getDate()+1;
@@ -115,7 +117,7 @@ const handleChange = (event) => {
       } 
     });
 
- console.log(user.date.startDate);
+
   
   },[])
   
@@ -131,48 +133,48 @@ const handleChange = (event) => {
         
 
             <form Validate autoComplete="on">
-        <h3>Enter user info</h3>
+        <h3>Edit user info</h3>
 
-        <TextField
+        <TextField className={styles.title}
           required
           id="filled-required"
           label="Name"
           variant="filled"
-          // type="text"
+          type="text"
           name="name"
           onChange={handleChange}
           value={user.name}
           variant="outlined"
-          color="secondary"
+          color="primary"
         />
         <br />
-        <TextField
+        <TextField className={styles.title}
           required
           id="filled-required"
           label="Email"
           variant="filled"
-          // type="email"
+           type="email"
           name="email"
           onChange={handleChange}
           value={user.email}
           variant="outlined"
-          color="secondary"
+          color="primary"
         />
         <br />
-        <TextField
+        <TextField className={styles.title}
           required
           id="filled-required"
-          label="Contact No."
+          label="Mobile"
           variant="filled"
           type="number"
           name="contact"
           onChange={handleChange}
           value={user.mobile}
           variant="outlined"
-          color="secondary"
+          color="primary"
         />
         <br />
-        <TextField
+        <TextField className={styles.title}
           required
           id="filled-required"
           label="Aadhar Card No."
@@ -182,10 +184,10 @@ const handleChange = (event) => {
           onChange={handleChange}
           value={user.aadhar}
           variant="outlined"
-          color="secondary"
+          color="primary"
         />
         <br />
-        <TextField
+        <TextField className={styles.title}
           required
           id="filled-required"
           label="Address"
@@ -195,23 +197,22 @@ const handleChange = (event) => {
           onChange={handleChange}
           value={user.address}
           variant="outlined"
-          color="secondary"
+          color="primary"
         />
         <br />
-       
+        <p className={styles.para}>Number of Days you want to stay ? </p><br />
         <DateRange
-    
           editableDateInputs={true}
           onChange={(item) => setdate([item.selection])}
           moveRangeOnFirstSelection={false}
           ranges={date}
-          // value={user.date}
+          className ={styles.date}
         />
         <br />
-        <Button variant="contained" color="primary" onClick={handleAdd}>
-          Submit
+        <Button className={styles.btn} color="primary" onClick={handleAdd}>
+          Upload
         </Button>
-        {/* <button onClick={handleClick}>Submit</button> */}
+      
       </form>
 
 
@@ -221,10 +222,13 @@ const handleChange = (event) => {
 }
 else{
     return(
-        <div>
-            <Navbar></Navbar>
-            <h1>Edit</h1>
-        </div>
+      <div className={styles.container}>
+      <Navbar/> 
+      <br/>
+      <br/>
+      <h1 className={styles.title1}>Hotel-Management</h1>
+      </div>
+   
     )
 }
 }

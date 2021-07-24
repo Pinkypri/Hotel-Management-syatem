@@ -1,9 +1,9 @@
 import React from 'react'
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
-import Home from "./Pages/Home";
-import Customer from "./Pages/Customer";
-import About from './Pages/About';
-import Edit from "./Pages/Edit";
+import Home from "./Pages/Home/Home";
+import Customer from "./Pages/Customer/Customer";
+import About from "./Pages/About/About";
+import Edit from "./Pages/Edit/Edit";
 import reducer from './Store/reducers/user';
 import { createStore } from "redux";
 import { Provider } from 'react-redux';
